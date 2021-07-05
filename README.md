@@ -1,7 +1,6 @@
 Выпущен пре-релиз c BDD и юнит-тестами...
 
 //TODO ci, документация, переход на англ., интеграционные тесты
-
 # Описание
 
 [![Quality Gate Status](https://sonar.openbsl.ru/api/project_badges/measure?project=gitlab-services&metric=alert_status)](https://sonar.openbsl.ru/dashboard?id=gitlab-services)
