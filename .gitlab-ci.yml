@@ -14,7 +14,7 @@ merge_request:
   variables:
     GIT_DEPTH: 0
   script:
-    - keytool -cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias $SSL_SERVER -file "$SONAR_SSL_CERTIFICATE"
+    - keytool -cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias $SONAR_SSL_SERVER -file "$SONAR_SSL_CERTIFICATE"
     - export PROJECT_VERSION=$(grep -oPm1 "(?<=<version>)[^<]+" GitlabServices/src/Configuration/Configuration.mdo)
     - export SONAR_SCANNER_OPTS="-Xmx4g"
     - sonar-scanner
@@ -33,7 +33,7 @@ push:
   variables:
     GIT_DEPTH: 0
   script:
-    - keytool -cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias $SSL_SERVER -file "$SONAR_SSL_CERTIFICATE"
+    - keytool -cacerts -storepass changeit -noprompt -trustcacerts -importcert -alias $SONAR_SSL_SERVER -file "$SONAR_SSL_CERTIFICATE"
     - export PROJECT_VERSION=$(grep -oPm1 "(?<=<version>)[^<]+" GitlabServices/src/Configuration/Configuration.mdo)
     - export SONAR_SCANNER_OPTS="-Xmx4g"
     - sonar-scanner
